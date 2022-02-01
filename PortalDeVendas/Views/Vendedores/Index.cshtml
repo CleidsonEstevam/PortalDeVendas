@@ -1,8 +1,44 @@
-﻿
+﻿@model IEnumerable<PortalDeVendas.Models.Vendedor>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vendedores";
 
 }
 
 
-<h2>Teste</h2>
+<h2>Vendedores</h2>
+<table class="table table-striped">
+    <thead>
+        @*<tr>
+            @Html.DisplayNameFor(model => model.Nome)
+        </tr>*@
+        <tr>
+            @Html.DisplayNameFor(model => model.Email)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(model => model.PisoSalarial)
+        </tr>
+        <tr>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PisoSalarial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departamento)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

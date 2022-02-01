@@ -7,7 +7,7 @@ namespace PortalDeVendas.Models
     public class Vendedor
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Nome { get; set; }
         public string Email { get; set; }
         public DateTime Data { get; set; }
         public double PisoSalarial { get; set; }
@@ -18,10 +18,10 @@ namespace PortalDeVendas.Models
         {
 
         }
-        public Vendedor(int id, string name, string email, DateTime data, double pisoSalarial, Departamento departamento)
+        public Vendedor(int id, string nome, string email, DateTime data, double pisoSalarial, Departamento departamento)
         {
             Id = id;
-            Name = name;
+            Nome = nome;
             Email = email;
             Data = data;
             PisoSalarial = pisoSalarial;
