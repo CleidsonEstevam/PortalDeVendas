@@ -6,19 +6,22 @@
 
 
 <h2>Vendedores</h2>
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
-        @*<tr>
-            @Html.DisplayNameFor(model => model.Nome)
-        </tr>*@
-        <tr>
-            @Html.DisplayNameFor(model => model.Email)
-        </tr>
-        <tr>
-            @Html.DisplayNameFor(model => model.PisoSalarial)
-        </tr>
-        <tr>
-            @Html.DisplayNameFor(model => model.Departamento)
+        <tr class="success">
+            <td>
+                @Html.DisplayNameFor(model => model.Nome)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Email)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Data)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.PisoSalarial)
+            </td>
+            <td></td>
         </tr>
     </thead>
     <tbody>
@@ -33,10 +36,16 @@
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.PisoSalarial)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Departamento)
+                    <a asp-action="Editar" asp-rout-id="@item.Id">Editar</a> |
+                    <a asp-action="Detalhes" asp-rout-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Excluir" asp-rout-id="@item.Id">Excluir</a>
+
                 </td>
             </tr>
         }
