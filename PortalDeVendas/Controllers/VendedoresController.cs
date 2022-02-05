@@ -17,5 +17,9 @@ namespace PortalDeVendas.Controllers
             var list = _vendedorService.FindAll();
             return View(list);
         }
+        public IActionResult Create() 
+        {
+            return View();
+        }
     }
 }
