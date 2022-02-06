@@ -12,6 +12,7 @@ namespace PortalDeVendas.Models
         public DateTime Data { get; set; }
         public double PisoSalarial { get; set; }
         public Departamento Departamento { get; set; }
+        public int DepartamentoId { get; set; }
         public ICollection<RelatorioDeVendas> Vendas { get; set; } = new List<RelatorioDeVendas>();
 
         public Vendedor()

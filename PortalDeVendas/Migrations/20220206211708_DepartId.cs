@@ -1,0 +1,60 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace PortalDeVendas.Migrations
+{
+    public partial class DepartId : Migration
+    {
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Vendedor_Departamento_DepartamentoId",
+                table: "Vendedor");
+
+            migrationBuilder.RenameColumn(
+                name: "Name",
+                table: "Vendedor",
+                newName: "Nome");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "DepartamentoId",
+                table: "Vendedor",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldNullable: true);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Vendedor_Departamento_DepartamentoId",
+                table: "Vendedor",
+                column: "DepartamentoId",
+                principalTable: "Departamento",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Vendedor_Departamento_DepartamentoId",
+                table: "Vendedor");
+
+            migrationBuilder.RenameColumn(
+                name: "Nome",
+                table: "Vendedor",
+                newName: "Name");
+
+            migrationBuilder.AlterColumn<int>(
+                name: "DepartamentoId",
+                table: "Vendedor",
+                nullable: true,
+                oldClrType: typeof(int));
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Vendedor_Departamento_DepartamentoId",
+                table: "Vendedor",
+                column: "DepartamentoId",
+                principalTable: "Departamento",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Restrict);
+        }
+    }
+}
